@@ -1,8 +1,9 @@
 import time
 import requests
 from .models import Job
-from ..job.settings import webhook_url
-WEBHOOK_URL = webhook_url
+from django.conf import settings
+
+WEBHOOK_URL = settings.WEBHOOK_URL
 
 def run_job(job_id):
     job = Job.objects.get(id=job_id)

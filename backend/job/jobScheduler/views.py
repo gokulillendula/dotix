@@ -22,6 +22,10 @@ class JobDetail(APIView):
         job = Job.objects.get(id=id)
         return Response(JobSerializer(job).data)
 
+class DeleteJob(APIView):
+    def delete(self, request, id):
+        Job.objects.filter(id=id).delete()
+        return Response({"message":"deleted"})
 
 
 

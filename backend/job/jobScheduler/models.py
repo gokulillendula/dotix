@@ -3,14 +3,14 @@ from django.db import models
 # Create your models here.
 class Job(models.Model):
     priority_choices = [
-        ('low', 'Low'),
-        ('medium', 'Medium'),
-        ('high', 'High'),
+        ('Low', 'Low'),
+        ('Medium', 'Medium'),
+        ('High', 'High'),
     ]
     status_choices = [
-        ('pending', 'Pending'), 
-        ('running', 'Running'), 
-        ('failed', 'Failed')
+        ('Pending', 'Pending'), 
+        ('Running', 'Running'), 
+        ('Failed', 'Failed')
     ]
     taskName = models.CharField(max_length=255)
     payload = models.JSONField()
